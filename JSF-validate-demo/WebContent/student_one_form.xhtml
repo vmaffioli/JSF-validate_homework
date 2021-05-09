@@ -8,30 +8,41 @@
 	<title>studentOne One Registration Form</title>
 
 	<style>
-		.error {color: red}
-	</style>
+.error {
+	color: red
+}
+</style>
 
 </h:head>
 
 <h:body>
 
 	<h:form>
-
-		<h:messages styleClass="error" />
    		
    		First name: <h:inputText value="#{studentOne.firstName}"
-			label="First name" required="true"  />
+			label="First name" required="true" id="first_name" 
+			requireMessage="Your first name is mandatory!!"/>
+
+		<h:messages for="first_name" styleClass="error" />
 
 		<br />
 		<br />
    		
    		Last name: <h:inputText value="#{studentOne.lastName}"
-			label="Last name" required="true" />
+			label="Last name" required="true"  id="last_name" 
+			requireMessage="Your last name is mandatory!!"/>
+
+		<h:messages for="last_name" styleClass="error" />
+
 		<br />
 		<br />
 		
 		Email: <h:inputText value="#{studentOne.email}" label="Email"
-			required="true" />
+			required="true" id="email"
+			requireMessage="Your email is mandatory!!"/>
+
+		<h:messages for="email" styleClass="error" />
+
 		<br />
 		<br />
 
