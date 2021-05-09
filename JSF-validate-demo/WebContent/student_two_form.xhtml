@@ -8,8 +8,10 @@
 	<title>student Two Registration Form</title>
 
 	<style>
-		.error {color: red}
-	</style>
+.error {
+	color: red
+}
+</style>
 
 </h:head>
 
@@ -17,25 +19,51 @@
 
 	<h:form>
 
-		<h:messages styleClass="error" />
    		
-   		First name: <h:inputText value="#{studentOne.firstName}"
-			label="First name" required="true"  />
+   		First name: <h:inputText value="#{studentTwo.firstName}"
+			label="First name" required="true" id="first_name"
+			requireMessage="Your first name is mandatory!!" />
+
+		<h:messages for="first_name" styleClass="error" />
 
 		<br />
 		<br />
    		
-   		Last name: <h:inputText value="#{studentOne.lastName}"
-			label="Last name" required="true" />
+   		Last name: <h:inputText value="#{studentTwo.lastName}"
+			label="Last name" required="true" id="last_name"
+			requireMessage="Your last name is mandatory!!" />
+
+		<h:messages for="last_name" styleClass="error" />
+
 		<br />
 		<br />
 		
-		Email: <h:inputText value="#{studentOne.email}" label="Email"
-			required="true" />
+		Free Passes: <h:inputText value="#{studentTwo.freePasses}"
+			label="free_passses" required="true" id="free_passes"
+			>
+
+			<f:validateLongRange minimum="1" maximum="100" />
+
+		</h:inputText>
+
+		<h:messages for="free_passes" styleClass="error" />
+
+		<br />
+		<br />
+				
+		Postal Code: <h:inputText value="#{studentTwo.postalCode}"
+			label="postal_code" required="true" id="postal_code">
+
+			<f:validateLength minimum="5" maximum="5" />
+
+		</h:inputText>
+
+		<h:messages for="postal_code" styleClass="error" />
+
 		<br />
 		<br />
 
-		<h:commandButton value="Submit" action="student_one_response" />
+		<h:commandButton value="Submit" action="student_two_response" />
 
 	</h:form>
 </h:body>
